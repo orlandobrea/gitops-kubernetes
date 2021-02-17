@@ -1,7 +1,9 @@
 namespace: dashboard
 backend:
+  version: 1.0.5
   domain: back.192-168-0-1.nip.io
 frontend:
+  version: latest
   domain: front.192-168-0-1.nip.io
 database:
   username: 
