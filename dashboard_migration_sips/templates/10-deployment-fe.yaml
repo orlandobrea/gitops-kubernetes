@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: dashboard-migration-sips-fe
-          image: "orlandobrea/andes-sips-dashboard-fe:{{ .Values.frontend.version }}"
+          image: "orlandobrea/dashboard-migracion-sips-fe:{{ .Values.frontend.version }}"
           imagePullPolicy: Always
           ports:
             - containerPort: 80
