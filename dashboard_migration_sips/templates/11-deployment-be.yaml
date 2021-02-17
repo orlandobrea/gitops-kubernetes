@@ -48,4 +48,4 @@ spec:
                   name: dashboard-sips-be
                   key: password                     
       imagePullSecrets:
-        - name: docker-orlando # cambiarlo por el nombre que corresponda. Si es publico eliminarlo
+        - name: docker-login # cambiarlo por el nombre que corresponda. Si es publico eliminarlo
