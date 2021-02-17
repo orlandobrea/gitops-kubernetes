@@ -17,6 +17,8 @@ spec:
         app: dashboard-migration-sips-be
     spec:
       containers:
+        imagePullSecrets:
+          - name: docker-orlando # cambiarlo por el nombre que corresponda. Si es publico eliminarlo
         - name: dashboard-migration-sips-be
           image: "orlandobrea/dashboard-migracion-sips-be:{{ .Values.backend.version }}"
           imagePullPolicy: Always
