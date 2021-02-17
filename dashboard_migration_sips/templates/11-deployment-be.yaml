@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: dashboard-migration-sips-be
-          image: "orlandobrea/andes-sips-dashboard-be:{{ .Values.backend.version }}"
+          image: "orlandobrea/dashboard-migracion-sips-be:{{ .Values.backend.version }}"
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
