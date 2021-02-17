@@ -41,4 +41,5 @@ spec:
         - name: config-files
           configMap:
             name: "dashboard-sips-fe"
-
+      imagePullSecrets:
+        - name: docker-login # cambiarlo por el nombre que corresponda. Si es publico eliminarlo
