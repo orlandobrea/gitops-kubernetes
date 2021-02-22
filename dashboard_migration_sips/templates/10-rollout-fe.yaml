@@ -1,0 +1,53 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: dashboard-migracion-sips-fe
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      name: dashboard-migration-sips-be
+  template:
+    metadata:
+      labels:
+        name: dashboard-migration-sips-fe
+    spec:
+      containers:
+      - name: dashboard-migration-sips-fe
+        image: "orlandobrea/dashboard-migracion-sips-fe:{{ .Values.frontend.version }}"
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+            protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+        volumeMounts:
+        - name: config-files
+          mountPath: /usr/share/nginx/html/assets/settings.json
+          subPath: settings.json
+          readOnly: true
+      volumes:
+        - name: config-files
+          configMap:
+            name: "dashboard-sips-fe"
+      imagePullSecrets:
+        - name: docker-login # cambiarlo por el nombre que corresponda. Si es publico eliminarlo
+  minReadySeconds: 30
+  revisionHistoryLimit: 3
+  strategy:
+    canary: #Indicates that the rollout should use the Canary strategy
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 10
+      - pause:
+          duration: 10m 
+      - setWeight: 20 # 20% del trafico al servicio nuevo
+      - pause: {} # pause indefinitely
