@@ -6,11 +6,11 @@ spec:
   replicas: 2 
   selector:
     matchLabels:
-      name: dashboard-migration-sips-fe
+      app: dashboard-migration-sips-fe
   template:
     metadata:
       labels:
-        name: dashboard-migration-sips-fe
+        app: dashboard-migration-sips-fe
     spec:
       containers:
       - name: dashboard-migration-sips-fe

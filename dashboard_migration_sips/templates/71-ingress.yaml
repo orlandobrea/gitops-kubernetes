@@ -18,7 +18,7 @@ spec:
   - match: Host(`{{ .Values.backend.domain }}`)
     kind: Rule
     services:
-    - name: dashboard-migration-sips-be 
+    - name: dashboard-migration-sips-be-svc
       port: 3000
     middlewares:
     - name: dashboard-migration-sips-be-compress
