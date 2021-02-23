@@ -48,6 +48,19 @@ spec:
       steps:
       - setWeight: 10
       - pause:
-          duration: 10m 
+          duration: 1m 
       - setWeight: 20 # 20% del trafico al servicio nuevo
-      - pause: {} # pause indefinitely
+      - pause:
+          duration: 3m 
+      - setWeight: 50 # 50% del trafico al servicio nuevo
+      - pause:
+          duration: 3m 
+      - setWeight: 75 # 75% del trafico al servicio nuevo
+      - pause:
+          duration: 3m 
+      - setWeight: 100 # 100% del trafico al servicio nuevo
+      - pause:
+          duration: 3m 
+          
+
+       
