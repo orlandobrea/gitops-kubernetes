@@ -4,6 +4,7 @@ metadata:
   name: dashboard-migration-sips-fe-svc
   annotations:
     80.service.kuma.io/protocol: "http"
+    ingress.kubernetes.io/service-upstream: "true"
 spec:
   type: ClusterIP
   ports: 
