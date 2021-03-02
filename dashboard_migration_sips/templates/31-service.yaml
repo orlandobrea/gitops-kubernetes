@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: dashboard-migration-sips-be-svc
   annotations:
-    3000.service.kuma.io/protocolo: "http"
+    3000.service.kuma.io/protocol: "http"
 spec:
   type: ClusterIP
   ports: 
