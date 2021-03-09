@@ -19,7 +19,7 @@ spec:
   - match: Host(`{{ .Values.frontend.domain }}`)
     kind: Rule
     services:
-    - name: dashboard-migration-sips-fe-stable-svc
+    - name: rollout-fe-svc
       port: 80
 #  tls:
 #    hosts:
