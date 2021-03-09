@@ -58,6 +58,5 @@ spec:
       stableService: dashboard-migration-sips-be-stable-svc
       trafficRouting:
         smi:
-          rootService: root-be-svc
           trafficSplitName: rollout-be-traffic-split
 

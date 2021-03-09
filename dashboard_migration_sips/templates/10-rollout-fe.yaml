@@ -51,7 +51,6 @@ spec:
       stableService: dashboard-migration-sips-fe-stable-svc
       trafficRouting:
         smi:
-          rootService: root-fe-svc
           trafficSplitName: rollout-fe-traffic-split
 
 
