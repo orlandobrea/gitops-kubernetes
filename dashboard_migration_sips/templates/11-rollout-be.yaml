@@ -49,22 +49,15 @@ spec:
   minReadySeconds: 30
   revisionHistoryLimit: 3
   strategy:
-    canary: #Indicates that the rollout should use the Canary strategy
-      maxSurge: "25%"
-      maxUnavailable: 0
+    canary: 
       steps:
-      - setWeight: 10
+      - setWeight: 20
       - pause:
           duration: 1m 
-      - setWeight: 20 # 20% del trafico al servicio nuevo
-      - pause:
-          duration: 3m 
-      - setWeight: 50 # 50% del trafico al servicio nuevo
-      - pause:
-          duration: 3m 
-      - setWeight: 75 # 75% del trafico al servicio nuevo
-      - pause:
-          duration: 3m 
-      - setWeight: 100 # 100% del trafico al servicio nuevo
-      - pause:
-          duration: 3m 
+      canaryService: dashboard-migration-sips-be-canary-svc
+      stableService: dashboard-migration-sips-be-stable-svc
+      trafficRouting:
+        smi:
+          rootService: root-be-svc
+          trafficSplitName: rollout-be-traffic-split
+
