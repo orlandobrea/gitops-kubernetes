@@ -59,4 +59,5 @@ spec:
       trafficRouting:
         smi:
           trafficSplitName: rollout-be-traffic-split
+          rootService: rollout-be-svc
 

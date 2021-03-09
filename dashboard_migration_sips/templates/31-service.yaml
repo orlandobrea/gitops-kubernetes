@@ -25,3 +25,17 @@ spec:
       protocol: TCP
   selector:
     app: dashboard-migration-sips-be
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rollout-be-svc
+spec:
+  type: ClusterIP
+  ports: 
+    - name: web
+      port: 3000
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    app: dashboard-migration-sips-be

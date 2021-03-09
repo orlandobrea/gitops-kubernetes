@@ -52,6 +52,7 @@ spec:
       trafficRouting:
         smi:
           trafficSplitName: rollout-fe-traffic-split
+          rootService: rollout-fe-svc
 
 
        
