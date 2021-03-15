@@ -54,7 +54,7 @@ spec:
         templates:
           - templateName: success-rate
         args:
-          - name: app
+          - name: app-name
             value: dashboard-migrations-sips-be
       steps:
       - setWeight: 20
