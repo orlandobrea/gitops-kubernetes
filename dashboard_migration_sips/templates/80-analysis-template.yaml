@@ -13,4 +13,4 @@ spec:
     provider:
       prometheus:
         address: http://argocd-metrics:8082/metrics
-        query: {{' sum(irate( response_total{app={{ args.app-name }},classification="success"}[5m])) / sum(irate( response_total{app={{ args.app-name }}}[5m])) '}}
+        query: {{` sum(irate( response_total{app={{ args.app-name }},classification="success"}[5m])) / sum(irate( response_total{app={{ args.app-name }}}[5m])) `}}
