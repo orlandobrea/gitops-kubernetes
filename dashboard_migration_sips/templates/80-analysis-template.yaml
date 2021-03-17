@@ -7,10 +7,10 @@ spec:
   - name: app-name
   metrics:
   - name: success-rate
-    interval: 5m
+    interval: 1m
     successCondition: result[0] >= 0.95
     failureLimit: 3
     provider:
       prometheus:
-        address: http://argocd-metrics:8082/metrics
+        address: http://prometheus.linkerd-viz.svc:9090/metrics
         query: {{` sum(irate( response_total{app={{ args.app-name }},classification="success"}[5m])) / sum(irate( response_total{app={{ args.app-name }}}[5m])) `}}
