@@ -50,12 +50,12 @@ spec:
   revisionHistoryLimit: 3
   strategy:
     canary: 
-      analysis:
-        templates:
-          - templateName: success-rate
-        args:
-          - name: app-name
-            value: dashboard-migrations-sips-be
+      # analysis:
+      #   templates:
+      #     - templateName: success-rate
+      #   args:
+      #     - name: app-name
+      #       value: dashboard-migrations-sips-be
       steps:
       - setWeight: 20
       - pause:
