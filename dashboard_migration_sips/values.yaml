@@ -1,6 +1,6 @@
 namespace: dashboard
 backend:
-  version: 1.0.24
+  version: 1.0.25
   domain: back.192-168-0-1.nip.io
 frontend:
   version: 1.0.6
