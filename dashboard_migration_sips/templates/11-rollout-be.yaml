@@ -55,7 +55,7 @@ spec:
           - templateName: success-rate
         args:
           - name: app-name
-            value: dashboard-migrations-sips-be
+            value: dashboard-migration-sips-be
           - name: stable-hash
             valueFrom:
                 podTemplateHashValue: Stable
