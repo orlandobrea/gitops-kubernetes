@@ -56,6 +56,12 @@ spec:
         args:
           - name: app-name
             value: dashboard-migrations-sips-be
+          - name: stable-hash
+            valueFrom:
+                podTemplateHashValue: Stable
+          - name: canary-hash
+            valueFrom:
+                podTemplateHashValue: Latest
       steps:
       - setWeight: 20
       - pause:
