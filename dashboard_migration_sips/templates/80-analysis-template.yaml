@@ -15,4 +15,4 @@ spec:
     provider:
       prometheus:
         address: http://prometheus.linkerd-viz.svc:9090/metrics
-        query: {{` sum(irate( response_total{app={{ args.app-name }},rollouts_pod_template_hash={{args.canary-hash}},classification="success"}[5m])) / sum(irate( response_total{app={{ args.app-name }}, rollouts_pod_template_hash={{args.canary-hash}} }[5m])) `}}
+        query: {{` sum(irate( response_total{app={{ args.app-name }},classification="success"}[5m])) / sum(irate( response_total{app={{ args.app-name }} }[5m])) `}}
