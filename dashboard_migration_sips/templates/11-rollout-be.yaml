@@ -50,18 +50,18 @@ spec:
   revisionHistoryLimit: 3
   strategy:
     canary: 
-      analysis:
-        templates:
-          - templateName: success-rate
-        args:
-          - name: app-name
-            value: dashboard-migration-sips-be
-          - name: stable-hash
-            valueFrom:
-                podTemplateHashValue: Stable
-          - name: canary-hash
-            valueFrom:
-                podTemplateHashValue: Latest
+      # analysis:
+      #   templates:
+      #     - templateName: success-rate
+      #   args:
+      #     - name: app-name
+      #       value: dashboard-migration-sips-be
+      #     - name: stable-hash
+      #       valueFrom:
+      #           podTemplateHashValue: Stable
+      #     - name: canary-hash
+      #       valueFrom:
+      #           podTemplateHashValue: Latest
       steps:
       - setWeight: 20
       - pause:
