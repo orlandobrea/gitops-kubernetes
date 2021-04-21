@@ -15,17 +15,17 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`{{ .Values.backend.domain }}`)
+  - match: Host(`{{ .Values.backend.domain }}`) && PathPrefix(`/api`)
     kind: Rule
     services:
     - name: rollout-be-svc
       port: 3000
     middlewares:
     - name: dashboard-migration-sips-be-compress
-#  tls:
-#    hosts:
-#      - sips-dashboard-app.andes.gob.ar
-#    passthrough: false
-#    options:
-#      name: dashboard-tls-options
+ # tls:
+ #   hosts:
+ #     - sips-dashboard-app.andes.gob.ar
+ #   passthrough: false
+ #   options:
+ #     name: dashboard-tls-options
 
